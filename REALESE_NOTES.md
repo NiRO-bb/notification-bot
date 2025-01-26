@@ -9,3 +9,6 @@
 
 ## 0.1.1
 * just tried to connect IntelliJ IDEA to GitHub
+
+## 0.2.0
+* implemented Command pattern for handling Telegram bot commands
