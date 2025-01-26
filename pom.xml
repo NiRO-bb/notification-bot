@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.notification-bot</groupId>
 	<artifactId>notification-bot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>PetBot</name>
 	<description>Telegram bot that sends a message when the new article appeared at the site</description>
 	<url/>
@@ -40,6 +40,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.telegram/telegrambots-spring-boot-starter -->
+		<dependency>
+			<groupId>org.telegram</groupId>
+			<artifactId>telegrambots-spring-boot-starter</artifactId>
+			<version>6.9.7.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

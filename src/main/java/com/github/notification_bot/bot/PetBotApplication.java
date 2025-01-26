@@ -2,6 +2,12 @@ package com.github.notification_bot.bot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan(basePackages = {
+		"com.github.notification_bot.bot.bot",
+		"org.telegram.telegrambots"
+})
 
 @SpringBootApplication
 public class PetBotApplication {
