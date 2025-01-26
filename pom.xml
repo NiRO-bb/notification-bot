@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.notification-bot</groupId>
 	<artifactId>notification-bot</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<name>PetBot</name>
 	<description>Telegram bot that sends a message when the new article appeared at the site</description>
 	<url/>
