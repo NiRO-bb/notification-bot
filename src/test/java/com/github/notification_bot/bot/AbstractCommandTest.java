@@ -4,6 +4,7 @@ import com.github.notification_bot.bot.bot.NotificaitonBot;
 import com.github.notification_bot.bot.command.Command;
 import com.github.notification_bot.bot.service.SendBotMessageService;
 import com.github.notification_bot.bot.service.SendBotMessageServiceImpl;
+import com.github.notification_bot.bot.service.TelegramUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -15,6 +16,7 @@ abstract class AbstractCommandTest {
 
     protected NotificaitonBot notificaitonBot = Mockito.mock(NotificaitonBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(notificaitonBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 

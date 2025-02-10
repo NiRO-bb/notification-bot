@@ -2,10 +2,14 @@ package com.github.notification_bot.bot.bot;
 
 import com.github.notification_bot.bot.command.CommandContainer;
 import com.github.notification_bot.bot.service.SendBotMessageServiceImpl;
+import com.github.notification_bot.bot.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.springframework.context.annotation.Profile;
 
 import static com.github.notification_bot.bot.command.CommandName.NO;
 
@@ -22,8 +26,9 @@ public class NotificaitonBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public NotificaitonBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public NotificaitonBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override
