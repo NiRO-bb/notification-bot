@@ -12,3 +12,6 @@
 
 ## 0.2.0
 * implemented Command pattern for handling Telegram bot commands
+
+## 0.3.0
+* added repository layer
