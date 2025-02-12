@@ -15,3 +15,7 @@
 
 ## 0.3.0
 * added repository layer
+
+## 0.4.0
+* added ability to subscribe on group
+* added ability to get a list of group subscriptions

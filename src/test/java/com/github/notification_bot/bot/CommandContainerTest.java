@@ -4,6 +4,8 @@ import com.github.notification_bot.bot.command.Command;
 import com.github.notification_bot.bot.command.CommandContainer;
 import com.github.notification_bot.bot.command.CommandName;
 import com.github.notification_bot.bot.command.UnknownCommand;
+import com.github.notification_bot.bot.javarushclient.JavaRushGroupClient;
+import com.github.notification_bot.bot.service.GroupSubService;
 import com.github.notification_bot.bot.service.SendBotMessageService;
 import com.github.notification_bot.bot.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
@@ -23,7 +25,9 @@ public class CommandContainerTest {
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
-        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
+        JavaRushGroupClient javaRushGroupClient = Mockito.mock(JavaRushGroupClient.class);
+        GroupSubService groupSubService = Mockito.mock(GroupSubService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService, javaRushGroupClient, groupSubService);
     }
 
     @Test

@@ -1,10 +1,9 @@
 package com.github.notification_bot.bot.repository.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -17,4 +16,7 @@ public class TelegramUser {
 
     @Column(name = "active")
     private boolean active;
+
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private List<GroupSub> groupSubs;
 }
