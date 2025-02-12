@@ -1,6 +1,8 @@
 package com.github.notification_bot.bot.bot;
 
 import com.github.notification_bot.bot.command.CommandContainer;
+import com.github.notification_bot.bot.javarushclient.JavaRushGroupClient;
+import com.github.notification_bot.bot.service.GroupSubService;
 import com.github.notification_bot.bot.service.SendBotMessageServiceImpl;
 import com.github.notification_bot.bot.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +29,8 @@ public class NotificaitonBot extends TelegramLongPollingBot {
     private final CommandContainer commandContainer;
 
     @Autowired
-    public NotificaitonBot(TelegramUserService telegramUserService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
+    public NotificaitonBot(TelegramUserService telegramUserService, JavaRushGroupClient groupClient, GroupSubService groupSubService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, groupClient, groupSubService);
     }
 
     @Override
