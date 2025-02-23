@@ -1,6 +1,6 @@
 package com.github.notification_bot.bot;
 
-import com.github.notification_bot.bot.bot.NotificaitonBot;
+import com.github.notification_bot.bot.bot.NotificationBot;
 import com.github.notification_bot.bot.command.Command;
 import com.github.notification_bot.bot.service.SendBotMessageService;
 import com.github.notification_bot.bot.service.SendBotMessageServiceImpl;
@@ -14,7 +14,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 abstract class AbstractCommandTest {
 
-    protected NotificaitonBot notificaitonBot = Mockito.mock(NotificaitonBot.class);
+    protected NotificationBot notificaitonBot = Mockito.mock(NotificationBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(notificaitonBot);
     protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 

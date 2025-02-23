@@ -10,7 +10,7 @@ public class StartCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
 
-    public final static String START_MESSAGE = "Hello! I'm the Notification Bot of NiRO_bb.";
+    public final static String START_MESSAGE = "Привет! Я - бот, который присылает уведомления о выходе новых статей на JavaRush.";
 
     public StartCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
         this.sendBotMessageService = sendBotMessageService;
@@ -21,6 +21,7 @@ public class StartCommand implements Command {
     public void execute(Update update) {
         String chatId = update.getMessage().getChatId().toString();
 
+        // установить значение 'true' для поля 'active'
         telegramUserService.findByChatId(chatId).ifPresentOrElse(
                 user -> {
                     user.setActive(true);

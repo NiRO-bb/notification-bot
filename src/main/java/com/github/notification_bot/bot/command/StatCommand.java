@@ -2,7 +2,6 @@ package com.github.notification_bot.bot.command;
 
 import com.github.notification_bot.bot.service.SendBotMessageService;
 import com.github.notification_bot.bot.service.TelegramUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class StatCommand implements Command {
@@ -12,7 +11,6 @@ public class StatCommand implements Command {
 
     public final static String STAT_MESSAGE = "Число пользователей бота - %s.";
 
-    //@Autowired
     public StatCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
         this.telegramUserService = telegramUserService;
         this.sendBotMessageService = sendBotMessageService;
