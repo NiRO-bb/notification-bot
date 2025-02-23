@@ -23,15 +23,12 @@ public class ListGroupSubCommand implements Command {
     @Override
     public void execute(Update update) {
 
-        // получить пользователя по chatId
         TelegramUser telegramUser = telegramUserService.findByChatId(String.valueOf(getChatId(update)))
                 .orElseThrow(NotFoundException::new);
 
         String message = "Я нашел все подписки на группы: \n\n";
-
-        // вывести все группы, на которые подписан пользователь
         String collectedGroups = telegramUser.getGroupSubs().stream()
-                .map(sub -> "Группа: " + sub.getTitle() + " , ID = " + sub.getId() + " \n")
+                .map(it -> "Группа: " + it.getTitle() + " , ID = " + it.getId() + " \n")
                 .collect(Collectors.joining());
 
         sendBotMessageService.sendMessage(telegramUser.getChatId(), message + collectedGroups);

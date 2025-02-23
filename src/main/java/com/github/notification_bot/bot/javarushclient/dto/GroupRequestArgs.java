@@ -22,8 +22,7 @@ public class GroupRequestArgs {
     private final Integer limit;
 
     public Map populateQueries() {
-
-        Map queries = new HashMap();
+        Map queries = new HashMap<>();
         if(nonNull(query)) {
             queries.put("query", query);
         }

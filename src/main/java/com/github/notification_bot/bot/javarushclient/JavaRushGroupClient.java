@@ -21,6 +21,4 @@ public interface JavaRushGroupClient {
 
 
     GroupDiscussionInfo getGroupById(Integer id);
-
-    Integer findLastPostId(Integer groupSub);
 }

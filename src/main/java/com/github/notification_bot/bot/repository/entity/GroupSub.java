@@ -12,7 +12,7 @@ import static java.util.Objects.isNull;
 @Data
 @Entity
 @Table(name = "group_sub")
-@EqualsAndHashCode(exclude="users")
+@EqualsAndHashCode
 public class GroupSub {
 
     @Id

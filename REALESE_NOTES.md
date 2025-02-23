@@ -19,6 +19,3 @@
 ## 0.4.0
 * added ability to subscribe on group
 * added ability to get a list of group subscriptions
-
-## 0.5.0
-* added the ability to delete group subscription

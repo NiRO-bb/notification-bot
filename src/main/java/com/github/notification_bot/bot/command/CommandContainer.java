@@ -22,7 +22,6 @@ public class CommandContainer {
                 .put(STAT.getCommandName(), new StatCommand(sendBotMessageService, telegramUserService))
                 .put(ADD_GROUP_SUB.getCommandName(), new AddGroupSubCommand(sendBotMessageService, javaRushGroupClient, groupSubService))
                 .put(LIST_GROUP_SUB.getCommandName(), new ListGroupSubCommand(sendBotMessageService, telegramUserService))
-                .put(DELETE_GROUP_SUB.getCommandName(), new DeleteGroupSubCommand(sendBotMessageService, groupSubService, telegramUserService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
                 .build();
 
@@ -30,7 +29,6 @@ public class CommandContainer {
     }
 
     public Command retrieveCommand(String commandIdentifier) {
-        // возврат объекта класса соответствующей команды, если такая существует
         return commandMap.getOrDefault(commandIdentifier, unknownCommand);
     }
 
