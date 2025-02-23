@@ -30,6 +30,7 @@ public class CommandContainer {
     }
 
     public Command retrieveCommand(String commandIdentifier) {
+        // возврат объекта класса соответствующей команды, если такая существует
         return commandMap.getOrDefault(commandIdentifier, unknownCommand);
     }
 

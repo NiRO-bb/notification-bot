@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface TelegramUserRepository extends JpaRepository<TelegramUser, String> {
+    // найти все поля таблицы по значению 'true' поля 'active'
     List<TelegramUser> findAllByActiveTrue();
 }

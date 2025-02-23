@@ -18,10 +18,15 @@ public class StopCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), STOP_COMMAND);
-        telegramUserService.findByChatId(update.getMessage().getChatId().toString()).ifPresent(it -> {
-           it.setActive(false);
-           telegramUserService.save(it);
-        });
+        String chatId = update.getMessage().getChatId().toString();
+
+        sendBotMessageService.sendMessage(chatId, STOP_COMMAND);
+
+        // установить значние 'false' для поля 'active'
+        telegramUserService.findByChatId(chatId).ifPresent(
+                user -> {
+                    user.setActive(false);
+                    telegramUserService.save(user);
+                });
     }
 }

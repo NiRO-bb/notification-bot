@@ -1,7 +1,7 @@
 package com.github.notification_bot.bot;
 
+import com.github.notification_bot.bot.bot.NotificationBot;
 import com.github.notification_bot.bot.service.SendBotMessageService;
-import com.github.notification_bot.bot.bot.NotificaitonBot;
 import com.github.notification_bot.bot.service.SendBotMessageServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,11 +14,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class SendBotMessageServiceTest {
 
     private SendBotMessageService sendBotMessageService;
-    private NotificaitonBot notificaitonBot;
+    private NotificationBot notificaitonBot;
 
     @BeforeEach
     public void init() {
-        notificaitonBot = Mockito.mock(NotificaitonBot.class);
+        notificaitonBot = Mockito.mock(NotificationBot.class);
         sendBotMessageService = new SendBotMessageServiceImpl(notificaitonBot);
     }
 

@@ -2,6 +2,7 @@ package com.github.notification_bot.bot.command;
 
 public enum CommandName {
 
+    // команды
     START("/start"),
     STOP("/stop"),
     HELP("/help"),
