@@ -31,17 +31,28 @@ public class AddGroupSubCommand implements Command {
 
     @Override
     public void execute(Update update) {
+        /// команда без номера группы
+        /// '/addgroupsub'
         if (getMessage(update).equalsIgnoreCase(ADD_GROUP_SUB.getCommandName())) {
             sendGroupIdList(String.valueOf(getChatId(update)));
             return;
         }
+
+        /// полноценная команда (с номером группы)
+        /// '/addgroupsub 1'
+        // получить номер выбранной группы
         String groupId = getMessage(update).split(SPACE)[1];
         String chatId = String.valueOf(getChatId(update));
+        // проверка на наличие числа
         if (isNumeric(groupId)) {
+
+            // получить группу с заданным ID
             GroupDiscussionInfo groupById = javaRushGroupClient.getGroupById(Integer.parseInt(groupId));
             if (isNull(groupById.getId())) {
                 sendGroupNotFound(chatId, groupId);
             }
+
+            // сохранить уникальную пару 'подписчик - группа'
             GroupSub savedGroupSub = groupSubService.save(chatId, groupById);
             sendBotMessageService.sendMessage(chatId, "Подписал на группу " + savedGroupSub.getTitle());
         } else {

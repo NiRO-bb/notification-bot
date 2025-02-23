@@ -6,8 +6,6 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
-import java.util.List;
-
 @Data
 @Entity
 @Table(name = "tg_user")
